@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>33 Knots Industries Inc.</title>
+<meta name="description" content="33 Knots Industries Inc. is a British Columbia company that builds software and hardware products. Our first product is Catchable, an iPhone app for BC anglers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232B1810'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23C8102E'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#2B1810; --muted:#6B5A4E; --signal:#C8102E; --sand:#E3DDD4; --paper:#FFFFFF; --rope:#B9AC9E;
+  --measure:40rem; --gutter:clamp(1rem,5vw,4rem);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --ink:#EFE9E1; --muted:#B3A699; --signal:#E8394F; --sand:#3E2F26; --paper:#1E120C; --rope:#6B5A4E; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;font-feature-settings:"ss01"}
+a{color:inherit;text-decoration-color:var(--signal);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--signal)}
+a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:2px}
+.wrap{padding:0 var(--gutter);max-width:72rem;margin:0 auto}
+header.top{display:flex;justify-content:space-between;align-items:baseline;padding-top:1.75rem;font-weight:500}
+.mark{font-weight:900;letter-spacing:-.02em;text-decoration:none}
+.top a.contact{color:var(--muted);text-decoration:none}
+.top a.contact:hover{color:var(--signal)}
+.hero{padding:clamp(4rem,14vw,10rem) 0 0}
+h1{margin:0;font-weight:900;font-size:clamp(3rem,11vw,8.5rem);line-height:.9;letter-spacing:-.045em;max-width:12ch}
+.lede{margin:2rem 0 0;max-width:34rem;font-size:clamp(1.15rem,2.2vw,1.4rem);line-height:1.45;color:var(--muted)}
+.log{display:block;width:100%;height:56px;margin:clamp(3rem,8vw,5rem) 0 0;overflow:visible}
+.log .line{stroke:var(--rope);stroke-width:2;fill:none}
+.log .knot{fill:var(--signal)}
+.log-caption{margin:.5rem 0 0;font-size:.875rem;color:var(--muted);max-width:var(--measure)}
+section{padding:clamp(3.5rem,9vw,6rem) 0 0}
+.row{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,var(--measure));gap:1rem 3rem;border-top:2px solid var(--ink);padding-top:1.25rem}
+h2{margin:0;font-size:1.0625rem;font-weight:700}
+.row p{margin:0 0 1rem}
+.row p:last-child{margin-bottom:0}
+.product h3{margin:0;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;letter-spacing:-.03em;line-height:1.05}
+.product .status{display:inline-block;margin:.75rem 0 1rem;font-size:.9375rem;font-weight:500;color:var(--signal)}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.6rem 2rem}
+dt{color:var(--muted)}
+dd{margin:0;font-weight:500}
+footer{padding:clamp(4rem,10vw,7rem) 0 2.5rem;color:var(--muted);font-size:.875rem}
+@media (max-width:40rem){
+  .row{grid-template-columns:1fr}
+  dl{grid-template-columns:1fr;gap:0}
+  dd{margin-bottom:.8rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .log .line{stroke-dasharray:1200;stroke-dashoffset:1200;animation:pay 1.6s cubic-bezier(.2,.7,.2,1) .2s forwards}
+  .log .knot{opacity:0;transform-box:fill-box;transform-origin:center;animation:tie .35s ease-out forwards}
+  @keyframes pay{to{stroke-dashoffset:0}}
+  @keyframes tie{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="/">33 Knots</a>
+    <a class="contact" href="mailto:info@33knots.ca">info@33knots.ca</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>33 Knots Industries</h1>
+      <p class="lede">We build software and hardware products from Vancouver, British Columbia. Small team, practical tools, made for people who work and play outdoors.</p>
+      <svg class="log" id="log" viewBox="0 0 1200 56" role="img" aria-label="A chip log line with 33 knots tied at even spacing">
+        <path class="line" id="rope"/>
+        <g id="knots"></g>
+      </svg>
+      <p class="log-caption">Sailors once measured speed by counting knots on a rope as it ran off the stern. Thirty-three of them is moving quickly.</p>
+    </div>
+
+    <section aria-labelledby="products">
+      <div class="row">
+        <h2 id="products">Products</h2>
+        <div class="product">
+          <h3>Catchable</h3>
+          <span class="status">In development for iPhone</span>
+          <p>Catchable puts British Columbia's fishing regulations on a map. Pick a spot on the water and see what you can keep, how many, and when, without digging through the regulation guide.</p>
+          <p>Support: <a href="mailto:support@catchable.ca">support@catchable.ca</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="company">
+      <div class="row">
+        <h2 id="company">Company</h2>
+        <dl>
+          <dt>Legal name</dt><dd>33 Knots Industries Inc.</dd>
+          <dt>Jurisdiction</dt><dd>British Columbia, Canada</dd>
+          <dt>Incorporation no.</dt><dd>BC1614250</dd>
+          <dt>Incorporated</dt><dd>October 29, 2026</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section aria-labelledby="contact">
+      <div class="row">
+        <h2 id="contact">Contact</h2>
+        <div>
+          <p>General enquiries: <a href="mailto:info@33knots.ca">info@33knots.ca</a></p>
+          <p>Product support: <a href="mailto:support@33knots.ca">support@33knots.ca</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 33 Knots Industries Inc.</footer>
+</div>
+<script>
+(function(){
+  var svg=document.getElementById('log'),rope=document.getElementById('rope'),g=document.getElementById('knots');
+  var n=33,ns='http://www.w3.org/2000/svg',first=true,lastW=0;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function draw(){
+    var W=Math.round(svg.getBoundingClientRect().width)||1200;
+    if(W===lastW)return; lastW=W;
+    svg.setAttribute('viewBox','0 0 '+W+' 56');
+    rope.setAttribute('d','M0 28 C '+W*.25+' 20, '+W*.75+' 36, '+W+' 28');
+    var r=W<600?3:5,pad=r+4;g.innerHTML='';
+    for(var i=0;i<n;i++){
+      var x=pad+i*((W-2*pad)/(n-1)),t=x/W;
+      var y=Math.pow(1-t,3)*28+3*Math.pow(1-t,2)*t*20+3*(1-t)*t*t*36+t*t*t*28;
+      var e=document.createElementNS(ns,'ellipse');
+      e.setAttribute('class','knot');e.setAttribute('cx',x.toFixed(1));e.setAttribute('cy',y.toFixed(1));
+      e.setAttribute('rx',r);e.setAttribute('ry',(r*1.4).toFixed(1));
+      if(first&&!reduce)e.style.animationDelay=(0.25+i*0.045).toFixed(3)+'s';
+      else e.style.animation='none';
+      g.appendChild(e);
+    }
+    if(!first)rope.style.animation='none';
+    first=false;
+  }
+  draw();window.addEventListener('resize',draw);
+})();
+</script>
+</body>
+</html>
